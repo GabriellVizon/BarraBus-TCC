@@ -1,0 +1,17 @@
+{
+  "name": "BarraBus - Transporte Público em Barra Bonita",
+  "short_name": "BarraBus",
+  "description": "Pontos e horários estimados da Circular de Barra Bonita, SP",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#e53935",
+  "orientation": "any",
+  "categories": ["transportation", "navigation"],
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "barrabus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BarraBus — pontos e horários estimados da Circular de Barra Bonita, SP",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}

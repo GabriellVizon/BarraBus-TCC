@@ -1,0 +1,512 @@
+[
+  {
+    "id": 1,
+    "ordem": 1,
+    "nome": "Rodoviária Nova",
+    "endereco": "Av. Pedro Ometto",
+    "bairro": "Habitacional",
+    "lat": -22.4865561,
+    "lng": -48.5484917
+  },
+  {
+    "id": 4,
+    "ordem": 4,
+    "nome": "Mercado Fernandes Max",
+    "endereco": "1817 Av. Pedro Ometto",
+    "bairro": "Vila Narcisa",
+    "lat": -22.4918411,
+    "lng": -48.549943
+  },
+  {
+    "id": 5,
+    "ordem": 5,
+    "nome": "Mercado Jaú Serve",
+    "endereco": "Rua Rio Branco, 550",
+    "bairro": "Centro",
+    "lat": -22.4978347,
+    "lng": -48.5571977
+  },
+  {
+    "id": 6,
+    "ordem": 6,
+    "nome": "Banco Itaú",
+    "endereco": "Rua Major Pompeu, 420",
+    "bairro": "Centro",
+    "lat": -22.4968479,
+    "lng": -48.5610173
+  },
+  {
+    "id": 7,
+    "ordem": 7,
+    "nome": "Panobianco Academia",
+    "endereco": "165 Av. da Saudade",
+    "bairro": "Centro",
+    "lat": -22.4963003,
+    "lng": -48.5634808
+  },
+  {
+    "id": 8,
+    "ordem": 8,
+    "nome": "Vidraçaria Temperplac",
+    "endereco": "Rua Fernão Salles, 336",
+    "bairro": "Centro",
+    "lat": -22.4934571,
+    "lng": -48.5631391
+  },
+  {
+    "id": 9,
+    "ordem": 9,
+    "nome": "Caio Barbearia",
+    "endereco": "Av. Nove de Julho, 407 - Vila Ricci",
+    "bairro": "Jardim São Caetano",
+    "lat": -22.4911596,
+    "lng": -48.563772
+  },
+  {
+    "id": 53,
+    "ordem": 53,
+    "nome": "R. Natale Petri, 60",
+    "endereco": "60 R. Natale Petri",
+    "bairro": "Recanto Regina",
+    "lat": -22.4848165,
+    "lng": -48.5657136,
+    "apelidos": [
+      "Atrás do Antigo James"
+    ]
+  },
+  {
+    "id": 54,
+    "ordem": 54,
+    "nome": "Praça Francisco Lourenção",
+    "endereco": "810 R. Hilário Parezan",
+    "bairro": "CECAP",
+    "lat": -22.4814379,
+    "lng": -48.5645534
+  },
+  {
+    "id": 55,
+    "ordem": 55,
+    "nome": "KIVERTRON (Em Frente)",
+    "endereco": "801 Av. Dr. José Erineu Ortigosa",
+    "bairro": "Distrito Industrial I",
+    "lat": -22.4802459,
+    "lng": -48.567691
+  },
+  {
+    "id": 10,
+    "ordem": 10,
+    "nome": "Boca Rica",
+    "endereco": "Av. Industrial",
+    "bairro": "Distrito Industrial",
+    "lat": -22.4879712,
+    "lng": -48.5649971
+  },
+  {
+    "id": 11,
+    "ordem": 11,
+    "nome": "Prédio da Marinha",
+    "endereco": "Av. Nove de Julho, 533",
+    "bairro": "Vila Correia",
+    "lat": -22.4886608,
+    "lng": -48.564664
+  },
+  {
+    "id": 12,
+    "ordem": 12,
+    "nome": "Praça da Rua Antônio Dario",
+    "endereco": "Rua Antonio Dario",
+    "bairro": "Cohab",
+    "lat": -22.4732529,
+    "lng": -48.5664472,
+    "apelidos": [
+      "Pracinha Lojas São Paulo"
+    ]
+  },
+  {
+    "id": 13,
+    "ordem": 13,
+    "nome": "Sinal Verde",
+    "endereco": "Av. João Paulo II",
+    "bairro": "Cohab",
+    "lat": -22.4715337,
+    "lng": -48.5607924
+  },
+  {
+    "id": 14,
+    "ordem": 14,
+    "nome": "Morena Loja de Roupas",
+    "endereco": "Av. João Paulo II, 805",
+    "bairro": "Centro",
+    "lat": -22.4655284,
+    "lng": -48.5656774
+  },
+  {
+    "id": 15,
+    "ordem": 15,
+    "nome": "Banca de Calçados",
+    "endereco": "R. João Morelato, 198 - Conj. Res. Cel. Jose V. Franca III",
+    "bairro": "Sonho Nosso",
+    "lat": -22.464936,
+    "lng": -48.5631282
+  },
+  {
+    "id": 16,
+    "ordem": 16,
+    "nome": "Bar do Amaral",
+    "endereco": "Rua Armando Moretti, 429",
+    "bairro": "Sonho Nosso IV",
+    "lat": -22.460582,
+    "lng": -48.5655249
+  },
+  {
+    "id": 17,
+    "ordem": 17,
+    "nome": "Arlindo Santille × Armando Moretti",
+    "endereco": "R. Arlindo Santille",
+    "bairro": "Sonho Nosso IV",
+    "lat": -22.4577491,
+    "lng": -48.5658353,
+    "apelidos": [
+      "Esquina com Armando Moretti"
+    ]
+  },
+  {
+    "id": 18,
+    "ordem": 18,
+    "nome": "Banco de Onibus",
+    "endereco": "Av. Papa João Paulo 2",
+    "bairro": "Sonho Nosso IV",
+    "lat": -22.4622585,
+    "lng": -48.5679504
+  },
+  {
+    "id": 19,
+    "ordem": 19,
+    "nome": "Prime Store",
+    "endereco": "Av. Dionísio Dutra e Silva",
+    "bairro": "Cohab",
+    "lat": -22.4697606,
+    "lng": -48.5671293
+  },
+  {
+    "id": 20,
+    "ordem": 20,
+    "nome": "Lanches Avenida",
+    "endereco": "Av. Dionísio Dutra e Silva, 457",
+    "bairro": "Cohab",
+    "lat": -22.4726483,
+    "lng": -48.5682736
+  },
+  {
+    "id": 21,
+    "ordem": 21,
+    "nome": "Incubadora",
+    "endereco": "Av. Dionísio Dutra e Silva, 241",
+    "bairro": "Cohab",
+    "lat": -22.475231,
+    "lng": -48.5692824
+  },
+  {
+    "id": 22,
+    "ordem": 22,
+    "nome": "Biscoitos Fofinho",
+    "endereco": "Av. Industrial, 1329. Dr. José Erineu Ortigosa",
+    "bairro": "Distrito Industrial",
+    "lat": -22.4768589,
+    "lng": -48.5689741
+  },
+  {
+    "id": 23,
+    "ordem": 23,
+    "nome": "Dierberg",
+    "endereco": "Av. Industrial, 827",
+    "bairro": "Distrito Industrial",
+    "lat": -22.4803974,
+    "lng": -48.5677029
+  },
+  {
+    "id": 24,
+    "ordem": 24,
+    "nome": "Cerâmica Lourenção",
+    "endereco": "Av. Industrial, 321",
+    "bairro": "Distrito Industrial",
+    "lat": -22.485449,
+    "lng": -48.5658843
+  },
+  {
+    "id": 25,
+    "ordem": 25,
+    "nome": "Padaria Barão",
+    "endereco": "Rua João Pessoa, 464",
+    "bairro": "Vila Nova",
+    "lat": -22.4915956,
+    "lng": -48.5637664
+  },
+  {
+    "id": 26,
+    "ordem": 26,
+    "nome": "Depósito Prospel",
+    "endereco": "Rua João Pessoa, 293",
+    "bairro": "Vila Nova",
+    "lat": -22.4936817,
+    "lng": -48.5643362
+  },
+  {
+    "id": 27,
+    "ordem": 27,
+    "nome": "Rua Prudente de Morais",
+    "endereco": "Rua Prudente de Morais",
+    "bairro": "Centro",
+    "lat": -22.4948692,
+    "lng": -48.5607349,
+    "apelidos": [
+      "Sorveteria (Em Frente)"
+    ]
+  },
+  {
+    "id": 28,
+    "ordem": 28,
+    "nome": "Igreja Matriz São José",
+    "endereco": "Rua Prudente de Morais, 756",
+    "bairro": "Centro",
+    "lat": -22.4954171,
+    "lng": -48.5583633
+  },
+  {
+    "id": 29,
+    "ordem": 29,
+    "nome": "Hospital",
+    "endereco": "Rua Rio Branco, 301",
+    "bairro": "Centro",
+    "lat": -22.4951548,
+    "lng": -48.55645
+  },
+  {
+    "id": 33,
+    "ordem": 33,
+    "nome": "Ana Mara Supermercado",
+    "endereco": "Av. Dr. Dionísio Dutra e Silva, 272",
+    "bairro": "Centro",
+    "lat": -22.4748367,
+    "lng": -48.5690618
+  },
+  {
+    "id": 34,
+    "ordem": 34,
+    "nome": "Zona Norte",
+    "endereco": "384 Av. Dr. Dionísio Dutra e Silva",
+    "bairro": "Cohab",
+    "lat": -22.4730028,
+    "lng": -48.5683513
+  },
+  {
+    "id": 35,
+    "ordem": 35,
+    "nome": "Amados e mimados",
+    "endereco": "600 Av. Dr. Dionísio Dutra e Silva",
+    "bairro": "Cohab",
+    "lat": -22.4712566,
+    "lng": -48.567627
+  },
+  {
+    "id": 36,
+    "ordem": 36,
+    "nome": "Igreja",
+    "endereco": "896 Av. Dr. Dionísio Dutra e Silva",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.4687579,
+    "lng": -48.5666667
+  },
+  {
+    "id": 37,
+    "ordem": 37,
+    "nome": "Geraldo Salvi × Orestes Gerin",
+    "endereco": "343 R. Geraldo Salvi",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.4681558,
+    "lng": -48.5656932,
+    "apelidos": [
+      "Esquina com a Rua Orestes Gerin"
+    ]
+  },
+  {
+    "id": 38,
+    "ordem": 38,
+    "nome": "Geraldo Salvi × Papa João",
+    "endereco": "130 R. Geraldo Salvi",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.46784,
+    "lng": -48.5634339,
+    "apelidos": [
+      "Esquina com a Rua Papa João"
+    ]
+  },
+  {
+    "id": 39,
+    "ordem": 39,
+    "nome": "Antônio Destro × Célso Sebastião",
+    "endereco": "135 R. Antônio Destro",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.4678526,
+    "lng": -48.5619391,
+    "apelidos": [
+      "Esquina com a Rua Célso Sebastião"
+    ],
+    "referencia": "Em frente à casa do portão vermelho, de frente para a Rua Célso Sebastião.",
+    "fonteCoordenadas": "Confirmadas pelo responsável pelo BarraBus em 15/09/2026."
+  },
+  {
+    "id": 40,
+    "ordem": 40,
+    "nome": "R. Erasmo Balde, 191",
+    "endereco": "191 R. Erasmo Balde",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.4687679,
+    "lng": -48.560438,
+    "apelidos": [
+      "Atrás do campinho"
+    ]
+  },
+  {
+    "id": 41,
+    "ordem": 41,
+    "nome": "R. Júlio Guiraldello, 160",
+    "endereco": "160 R. Júlio Guiraldello",
+    "bairro": "Núcleo Habitacional",
+    "lat": -22.4694253,
+    "lng": -48.5574296,
+    "apelidos": [
+      "Em frente a casa Nº 160"
+    ]
+  },
+  {
+    "id": 42,
+    "ordem": 42,
+    "nome": "SADH",
+    "endereco": "200 R. Dirce Manfrinato Romanin",
+    "bairro": "Núcleo Habitacional",
+    "lat": -22.4679933,
+    "lng": -48.5578317,
+    "apelidos": [
+      "Em frente ao SADH"
+    ]
+  },
+  {
+    "id": 43,
+    "ordem": 43,
+    "nome": "Leonardo de Águiar — em frente ao nº 669",
+    "endereco": "678 R. Leonardo de Águiar",
+    "bairro": "Núcleo Habitacional",
+    "lat": -22.4665661,
+    "lng": -48.5590907,
+    "apelidos": [
+      "Em frente a casa Nº 669"
+    ],
+    "referencia": "Casa nº 669; endereço cadastrado: R. Leonardo de Águiar, 678."
+  },
+  {
+    "id": 44,
+    "ordem": 44,
+    "nome": "Leonardo de Águiar × Jorge Pedrola",
+    "endereco": "531 R. Leonardo de Águiar",
+    "bairro": "Sonho Nosso I",
+    "lat": -22.4666527,
+    "lng": -48.5604775,
+    "apelidos": [
+      "Esquina com a Rua Jorge Pedrola"
+    ]
+  },
+  {
+    "id": 45,
+    "ordem": 45,
+    "nome": "Divinitos",
+    "endereco": "198 Rua João Morelato",
+    "bairro": "Conj. Res. Cel. Jose V. Franca III",
+    "lat": -22.464936,
+    "lng": -48.5631282
+  },
+  {
+    "id": 46,
+    "ordem": 46,
+    "nome": "R. Roberto Chiaratto, 500",
+    "endereco": "500 R. Roberto Chiaratto",
+    "bairro": "Conj. Res. Cel. Jose V. Franca III",
+    "lat": -22.4646541,
+    "lng": -48.562289,
+    "apelidos": [
+      "Atrás da Igreja"
+    ]
+  },
+  {
+    "id": 47,
+    "ordem": 47,
+    "nome": "R. Mário Andréoli, 245",
+    "endereco": "245 R. Mario Andréoli",
+    "bairro": "Sonho Nosso III",
+    "lat": -22.4643277,
+    "lng": -48.5601245,
+    "apelidos": [
+      "R. Mario Andréoli"
+    ]
+  },
+  {
+    "id": 48,
+    "ordem": 48,
+    "nome": "R. Mário Andréoli, 549",
+    "endereco": "549 R. Mario Andréoli",
+    "bairro": "Sonho Nosso V",
+    "lat": -22.4617194,
+    "lng": -48.5602614,
+    "apelidos": [
+      "Bar ao lado do Hair Nail Studio"
+    ]
+  },
+  {
+    "id": 49,
+    "ordem": 49,
+    "nome": "R. Domingos Miguel Ursini, 101",
+    "endereco": "101 R. Domingos Miguel Ursini",
+    "bairro": "Sonho Nosso V",
+    "lat": -22.4603062,
+    "lng": -48.5609365,
+    "apelidos": [
+      "Parquinho Antigo"
+    ]
+  },
+  {
+    "id": 50,
+    "ordem": 50,
+    "nome": "SESI — R. Avelino Bressanin",
+    "endereco": "511 R. Avelino Bressanin",
+    "bairro": "Sonho Nosso V",
+    "lat": -22.4602597,
+    "lng": -48.5630862,
+    "apelidos": [
+      "Atrás do Sesi"
+    ]
+  },
+  {
+    "id": 51,
+    "ordem": 51,
+    "nome": "João Morelato × Sílvio Cestari",
+    "endereco": "430 R. João Morelato",
+    "bairro": "Sonho Nosso V",
+    "lat": -22.4625873,
+    "lng": -48.5632562,
+    "apelidos": [
+      "Esquina com a Rua Sílvio Cestari"
+    ]
+  },
+  {
+    "id": 52,
+    "ordem": 52,
+    "nome": "Armando Moretti × Ângelo Biliassi",
+    "endereco": "271 R. Armando Moretti",
+    "bairro": "Sonho Nosso V",
+    "lat": -22.4622295,
+    "lng": -48.565426,
+    "apelidos": [
+      "Esquina com a Rua Ângelo Biliassi"
+    ]
+  }
+]

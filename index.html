@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarraBus - Circular de Barra Bonita</title>
+
+    <meta name="description" content="BarraBus — consulte pontos e horários estimados da Circular de Barra Bonita, SP. Encontre pontos próximos, consulte percursos e veja o mapa.">
+    <meta name="author" content="BarraBus">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="BarraBus">
+    <meta property="og:description" content="Pontos e horários da Circular de Barra Bonita">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="theme-color" content="#e53935">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net;
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
+        img-src 'self' data: blob: https://unpkg.com https://*.tile.openstreetmap.org https://tile.openstreetmap.org;
+        font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+        connect-src 'self' https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://unpkg.com https://cdn.jsdelivr.net;
+        upgrade-insecure-requests
+    ">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/realista-point.modoclaro.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
+    <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://b.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://c.tile.openstreetmap.org">
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="vendor/tabler/tabler-icons.min.css">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <template id="pageContentTemplate">
+            <!-- Hero Section -->
+            <section class="hero" id="inicio">
+                <div class="hero-bg">
+                    <svg width="100%" height="100%" viewBox="0 0 800 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#e53935;stop-opacity:0.6"/>
+                                <stop offset="100%" style="stop-color:#e53935;stop-opacity:0"/>
+                            </linearGradient>
+                            <linearGradient id="lineGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff5252;stop-opacity:0.4"/>
+                                <stop offset="100%" style="stop-color:#ff5252;stop-opacity:0"/>
+                            </linearGradient>
+                        </defs>
+                        <line x1="400" y1="-20" x2="700" y2="300" stroke="url(#lineGrad1)" stroke-width="2" opacity="0.7"/>
+                        <line x1="420" y1="-20" x2="720" y2="300" stroke="url(#lineGrad2)" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="440" y1="-20" x2="740" y2="300" stroke="url(#lineGrad1)" stroke-width="1" opacity="0.3"/>
+                        <line x1="460" y1="-20" x2="760" y2="300" stroke="url(#lineGrad2)" stroke-width="0.8" opacity="0.2"/>
+                        <line x1="380" y1="-20" x2="680" y2="300" stroke="url(#lineGrad1)" stroke-width="1.5" opacity="0.4"/>
+                        <rect x="550" y="20" width="180" height="220" rx="20" fill="none" stroke="#e53935" stroke-width="1.5" opacity="0.15" transform="rotate(-15, 640, 130)"/>
+                        <rect x="570" y="30" width="160" height="200" rx="18" fill="none" stroke="#ff5252" stroke-width="1" opacity="0.1" transform="rotate(-15, 650, 130)"/>
+                    </svg>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span>Consulte pontos e<br>horários da Circular em<br>Barra Bonita</span>
+                    </h1>
+                    <button class="hero-btn" id="heroBtn">
+                        <i class="ti ti-map-pin"></i> Usar minha localização
+                    </button>
+                </div>
+            </section>
+
+            <!-- Estimate Notice -->
+            <div class="estimate-notice" role="note">
+                <i class="ti ti-info-circle"></i>
+                <span>Horários aproximados. Chegue alguns minutos antes.</span>
+            </div>
+
+            <!-- Location Card -->
+            <div class="location-card">
+                <div class="location-item">
+                    <div class="location-icon red">
+                        <i class="ti ti-navigation"></i>
+                    </div>
+                    <div class="location-text">
+                        <span class="location-label">SUA LOCALIZAÇÃO</span>
+                        <span class="location-value" id="userLocationText">Aguardando permissão</span>
+                    </div>
+                </div>
+                <div class="location-divider"></div>
+                <div class="location-item">
+                    <div class="location-icon dark">
+                        <i class="ti ti-map-pin"></i>
+                    </div>
+                    <div class="location-text">
+                        <span class="location-label">PONTO MAIS PRÓXIMO</span>
+                        <span class="location-value" id="nearestStopText">Calculando após localizar</span>
+                    </div>
+                </div>
+                <div class="location-divider"></div>
+                <div class="location-embark">
+                    <span class="embark-label">PRÓXIMO HORÁRIO</span>
+                    <span class="embark-time" id="nextDepartureText">--</span>
+                </div>
+            </div>
+
+             <!-- Pontos Favoritos -->
+            <section class="section" id="favoritos">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Pontos Favoritos</h2>
+                        <p class="section-subtitle" id="favSubtitle">Ver os meus pontos favoritos.</p>
+                    </div>
+                </div>
+                <div class="cards-grid" id="favoriteStops" aria-live="polite"></div>
+            </section>
+
+            <!-- Pontos Próximos -->
+            <section class="section" id="pontos">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Pontos Próximos</h2>
+                        <p class="section-subtitle" id="nearbySubtitle">Permita a localização para ver os 3 pontos mais próximos.</p>
+                    </div>
+                </div>
+                <div class="cards-grid" id="nearbyStops" aria-live="polite"></div>
+            </section>
+
+            <!-- Mapa da Circular -->
+            <section class="section" id="mapa">
+                <div class="section-header">
+                    <h2 class="section-title">Mapa da Circular</h2>
+                    <div class="map-status">
+                        <div class="map-status-dot"></div>
+                        <span class="map-status-text" id="mapStatusText">Carregando mapa</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <div id="map" aria-label="Mapa dos pontos da Circular"></div>
+                    <div class="map-overlay" id="mapOverlay">
+                        <p class="map-overlay-label">SELECIONADO</p>
+                        <p class="map-overlay-bus" id="selectedStopName">Nenhum ponto selecionado</p>
+                        <p class="map-overlay-speed" id="selectedStopDetails">Clique em um card ou marcador do mapa.</p>
+                        <div class="map-overlay-bar"></div>
+                    </div>
+                </div>
+            </section>
+    </template>
+
+    <script defer src="vendor/leaflet/leaflet.js"></script>
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/favorites.js"></script>
+    <script defer src="js/reminders.js"></script>
+    <script defer src="js/circular-route.js"></script>
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/appShell.js"></script>
+    <script defer src="js/bootstrap-home.js"></script>
+    <script defer src="js/horarios.js"></script>
+    <script defer src="js/circular-ui.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarraBus - Pontos da Circular</title>
+
+    <meta name="description" content="BarraBus — pontos e horários estimados da Circular de Barra Bonita, SP. Consulte a tabela por dia, veja o mapa e trace sua rota.">
+    <meta name="author" content="BarraBus">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="BarraBus">
+    <meta property="og:description" content="Pontos e horários da Circular de Barra Bonita">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="theme-color" content="#e53935">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdn.jsdelivr.net;
+        style-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
+        img-src 'self' data: blob: https://unpkg.com https://*.tile.openstreetmap.org https://tile.openstreetmap.org;
+        font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
+        connect-src 'self' https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://unpkg.com https://cdn.jsdelivr.net;
+        upgrade-insecure-requests
+    ">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="img/icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
+    <link rel="dns-prefetch" href="https://a.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://b.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="https://c.tile.openstreetmap.org">
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="vendor/tabler/tabler-icons.min.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="pontos.css">
+</head>
+<body>
+    <template id="pageContentTemplate">
+        <!-- Content -->
+        <div class="content">
+            <!-- Main Column -->
+            <div class="content-main">
+                <h1 class="page-title">Pontos da Circular</h1>
+                <p class="page-subtitle" id="pageSubtitle">Carregando pontos da Circular de Barra Bonita.</p>
+
+                <!-- Estimate Notice -->
+                <div class="estimate-notice" role="note">
+                    <i class="ti ti-info-circle"></i>
+                    <span>Horários aproximados. Chegue alguns minutos antes.</span>
+                </div>
+
+                <!-- Line Detail Card -->
+                <div class="line-detail-card">
+                    <div class="line-header">
+                        <div>
+                            <p class="line-label">PONTO SELECIONADO</p>
+                            <h2 class="line-name" id="selectedPointName">Nenhum ponto selecionado</h2>
+                        </div>
+                        <div class="live-badge">
+                            <div class="live-dot"></div>
+                            <span class="live-text" id="locationStatus">GPS</span>
+                        </div>
+                    </div>
+
+                    <!-- Info Cards -->
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="ti ti-map-pin"></i>
+                                <span class="info-card-label">DISTÂNCIA</span>
+                            </div>
+                            <span class="info-card-value small-value" id="selectedDistance">Aguardando
+                                localização</span>
+                            <p class="info-card-sub" id="selectedAddress">Permita o GPS para ordenar por proximidade.
+                            </p>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="ti ti-route"></i>
+                                <span class="info-card-label" id="selectedNextHeading">PRÓXIMO HORÁRIO</span>
+                            </div>
+                            <span class="info-card-value small-value" id="selectedNext">Selecione um ponto.</span>
+                            <p class="info-card-sub" id="selectedLine">Rota Circular</p>
+                        </div>
+                    </div>
+
+
+                    <section class="nearby-priority" id="nearbyPrioritySection" aria-labelledby="nearbyPriorityTitle">
+                        <div class="nearby-priority-header">
+                            <div><span class="nearby-priority-eyebrow">PERTO DE VOCÊ</span><h2 class="nearby-priority-title" id="nearbyPriorityTitle">Pontos mais próximos</h2></div>
+                            <span class="nearby-priority-status" id="nearbyPriorityStatus">Aguardando GPS</span>
+                        </div>
+                        <div class="nearby-priority-grid" id="nearbyPriorityGrid" aria-live="polite"></div>
+                        <div class="nearby-priority-actions" id="nearbyPriorityActions"></div>
+                    </section>
+
+                    <!-- Schedule -->
+                    <div class="schedule-header">
+                        <span class="schedule-title">Tabela de Horários da Circular</span>
+                    </div>
+
+                    <div class="schedule-table" id="scheduleTable">
+                        <div id="scheduleDynamicContent"></div>
+                    </div>
+                    <p class="schedule-note" id="scheduleNote">Selecione um ponto para ver a próxima saída.</p>
+                </div>
+
+                <section class="other-points-section" id="circularPointsSection" aria-labelledby="circularPointsTitle">
+                    <div class="other-points-header">
+                        <div><span class="nearby-priority-eyebrow">CONTINUE EXPLORANDO</span><h2 class="other-points-title" id="circularPointsTitle">Outros pontos próximos</h2></div>
+                        <span class="nearby-priority-status" id="circularPointsCount"></span>
+                    </div>
+                    <div class="points-grid" id="pointsGrid" aria-live="polite"></div>
+                    <div class="show-more-container" id="showMoreContainer"></div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar Column -->
+            <aside class="content-sidebar">
+                <!-- Map Card -->
+                <div class="map-card">
+                    <div id="routeMap" class="route-map" aria-label="Mapa dos pontos da Circular"></div>
+                    <div class="map-btn" id="mapBtn">
+                        <i class="ti ti-arrows-maximize"></i>
+                        <span>Ver Mapa Completo</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </template>
+
+    <script defer src="vendor/leaflet/leaflet.js"></script>
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/theme.js"></script>
+    <script defer src="js/favorites.js"></script>
+    <script defer src="js/reminders.js"></script>
+    <script defer src="js/circular-route.js"></script>
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/appShell.js"></script>
+    <script defer src="js/bootstrap-points.js"></script>
+    <script defer src="js/horarios.js"></script>
+    <script defer src="js/circular-ui.js"></script>
+    <script defer src="js/pontos.js"></script>
+</body>
+
+</html>
